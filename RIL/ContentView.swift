@@ -9,8 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack (alignment: Alignment(horizontal: .leading, vertical: .center)){
+            
+            Color.white
+            
+            SideMenu()
+        }
     }
 }
 

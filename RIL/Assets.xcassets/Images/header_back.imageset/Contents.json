@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "header_back.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

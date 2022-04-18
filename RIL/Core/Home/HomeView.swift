@@ -10,80 +10,100 @@ import SwiftUI
 struct HomeView: View {
     @State var selectedTab = "Home"
     
+    let screen = UIScreen.main.bounds
+    
     init() {
         UITabBar.appearance().isHidden = true
     }
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
-            TabView(selection: $selectedTab) {
-                Color.red
-                    .ignoresSafeArea(.all, edges: .all)
-                    .tag("All Alerts")
-                
-                Color.green
-                    .ignoresSafeArea(.all, edges: .all)
-                    .tag("Home")
-                
-                Color.blue
-                    .ignoresSafeArea(.all, edges: .all)
-                    .tag("Add Details")
-            }
             
-            // Custom TabBar
-            HStack(spacing: 0) {
-                ForEach(tabs, id: \.self) { tab in
-                    GeometryReader { geometry in
-                        Button {
-                            withAnimation(.spring()) {
-                                selectedTab = tab
-                            }
-                        } label: {
-                            Image(systemName: "list.bullet.rectangle")
-                                .resizable()
-                                .renderingMode(.template)
-                                
-                                .aspectRatio( contentMode: .fit)
-                                .frame(width: 25, height: 25)
-                                .foregroundColor(selectedTab == tab ? Color.red : Color.gray )
-                                .padding(tab == "Home" ? 32 : 0)
-                                .background(Color.white.opacity(tab == "Home" ? 1 : 0).clipShape(Circle())
-                                )
-                                
-                                .offset(x: tab == "Home" ? -33 : 0, y: tab == "Home" ? -80 : 0 )
-                        }
-                        .onAppear {
-                            
-                        }
-                    }
-                    .frame(width: 25, height: 25)
+            Color.green
+            
+            VStack {
+                
+                HStack {
+                    Image(systemName: "line.3.horizontal")
+                        .padding()
                     
-
-                    if tab != tabs.last {
-                        Spacer(minLength: 0)
-                    }
+                    Spacer()
                     
+                    Image("logo_with_trans")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 48.0)
+                    
+                    Spacer()
+                    
+                    Image(systemName: "person")
+                        .padding()
+                        .background(
+                            Circle()
+                                .fill(Color.red)
+                        )
+                        .clipShape(Circle())
                 }
+                .padding(.horizontal)
+                .background(
+                    ArcShape(curveSize: 40)
+                        .fill(Color.theme.background)
+                        .ignoresSafeArea(edges: .top)
+                )
                 
+                Spacer()
                 
+                VStack {
+                    
+                    Spacer()
+                    
+                    HStack {
+                        Button {
+                            // Do Something
+                        } label: {
+                            VStack {
+                                Image(systemName: "bell.fill")
+                                    .font(.title)
+                                
+                                Text("View All Alerts")
+                                    .font(.subheadline)
+                            }
+                        }
+                        
+                        Spacer()
+                        
+                        Button {
+                            // Do Something
+                        } label: {
+                            VStack {
+                                Image(systemName: "camera.fill")
+                                    .font(.title)
+                                
+                                Text("Add Details")
+                                    .font(.subheadline)
+                            }
+                        }
+
+                    }
+                    .padding()
+                    .background(
+                        ArcShape(curveSize: 64)
+                            .fill(Color.theme.background)
+                            .rotationEffect(Angle(degrees: 180))
+                    )
+                }
+                .frame(height: 170)
+                .overlay(alignment: .top, content: {
+                    Image("g_prev_ui")
+                        .resizable()
+                        .frame(width: 128, height: 128)
+                        .aspectRatio(contentMode: .fit)
+                })
+                .ignoresSafeArea(edges: .bottom)
             }
-            .padding(.horizontal, 30)
-            .padding(.vertical)
-            .background(
-//                Color.white
-                TabBarCustomShape()
-                    .fill(Color.white)
-                    .cornerRadius(12)
-            )
-            
-            .padding(.horizontal)
-            // Bottom Edge
-            .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom)
-            
-            
-            
         }
-        .ignoresSafeArea(.all)
+        .ignoresSafeArea(edges: .bottom)
+        
     }
 }
 
@@ -93,4 +113,4 @@ struct HomeView_Previews: PreviewProvider {
     }
 }
 
-var tabs = ["All Alerts", "Home", "Add Details"]
+var tabs = ["All Alerts", "Add Details"]

@@ -10,23 +10,27 @@ import SwiftUI
 
 
 struct ArcShape : Shape {
+    var curveSize: CGFloat
+    
     func path(in rect: CGRect) -> Path {
         Path { path in
             
             // Top left
-            path.move(to: CGPoint(x: rect.minX, y: rect.maxY))
+            path.move(to: CGPoint(x: rect.minX, y: rect.minY))
             
             // Top right
-            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+            path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
             
             // mid right
-            path.addLine(to: CGPoint(x: rect.maxX, y: rect.midY))
+            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
             
             // bottom
-            path.addArc(center: CGPoint(x: rect.midX, y: rect.maxY), radius: rect.width / 2, startAngle: Angle(degrees: 0), endAngle: Angle(degrees: 180), clockwise: true)
+            path.addQuadCurve(to: CGPoint(x: rect.minX, y: rect.maxY), control: CGPoint(x: rect.midX, y: rect.maxY + curveSize))
             
             // mid left
             path.addLine(to: CGPoint(x: rect.minX, y: rect.midY))
+            
+            path.closeSubpath()
             
         }
         
@@ -39,8 +43,13 @@ struct ArcShape : Shape {
 
 struct ArcShape_Previews: PreviewProvider {
     static var previews: some View {
-        ArcShape()
+        ArcShape(curveSize: 100.0)
+            .fill(.red)
+            .rotationEffect(Angle(degrees: 180))
+            .frame(height: 100)
 //            .previewLayout(.sizeThatFits)
-            .frame(width: , height: 200)
+//            .frame(width: UIScreen.main.bounds.width, height: 200)
+//            .frame(width: UIScreen.main.bounds.width, height: 100)
+
     }
 }

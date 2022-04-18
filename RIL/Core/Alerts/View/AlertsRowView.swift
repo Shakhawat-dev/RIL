@@ -19,7 +19,7 @@ struct AlertsRowView: View {
                 )
                 
             VStack(alignment: .leading, spacing: 4.0) {
-                Text("Hello, World!")
+                Text("shakhawat hosaain shahin")
                     .font(.title3)
                     .fontWeight(.semibold)
                     .textCase(.uppercase)
@@ -40,14 +40,17 @@ struct AlertsRowView: View {
             
             VStack {
                 Text("View Location")
+                    .fontWeight(.semibold)
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
+                    .textCase(.uppercase)
                     
             }
             .frame(width: 96, height: 96, alignment: .center)
             .background(
                 RoundedRectangle(cornerRadius: 8)
-                    .fill(Color.green)
+                    .fill(Color.theme.accent)
+                    
             )
         }
     }

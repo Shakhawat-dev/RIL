@@ -61,14 +61,23 @@ struct HomeView: View {
                         Button {
                             // Do Something
                         } label: {
+                            
+                        }
+                        
+                        NavigationLink {
+                            AllAlertsView()
+                        } label: {
                             VStack {
                                 Image(systemName: "bell.fill")
                                     .font(.title)
+                                    .foregroundColor(.red)
                                 
                                 Text("View All Alerts")
                                     .font(.subheadline)
+                                    .foregroundColor(.red)
                             }
                         }
+
                         
                         Spacer()
                         

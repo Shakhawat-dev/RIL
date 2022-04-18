@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct AllAlertsView: View {
+    let list = Array(0...20)
+    
     var body: some View {
-        Text("Hello, World!")
+        ZStack {
+            ScrollView {
+                VStack {
+                    ForEach(list, id: \.self) { _ in
+                        AlertsRowView()
+                    }
+                }
+                .padding()
+            }
+        }
     }
 }
 

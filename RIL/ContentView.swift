@@ -13,7 +13,7 @@ struct ContentView: View {
             
             Color.white
             
-            SideMenu()
+           HomeView()
         }
     }
 }

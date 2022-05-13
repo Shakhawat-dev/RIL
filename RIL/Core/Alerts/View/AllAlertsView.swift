@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AllAlertsView: View {
+    @StateObject var vm = AllAlertsViewModel()
+    
     let list = Array(0...20)
     
     var body: some View {

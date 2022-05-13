@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var vm = HomeViewModel()
     @State var selectedTab = "Home"
+    @State var showMenu: Bool = false
     
     let screen = UIScreen.main.bounds
     
@@ -24,8 +26,15 @@ struct HomeView: View {
             VStack {
                 
                 HStack {
-                    Image(systemName: "line.3.horizontal")
-                        .padding()
+                    Button {
+                        withAnimation {
+                            showMenu.toggle()
+                        }
+                        
+                    } label: {
+                        Image(systemName: "line.3.horizontal")
+                            .padding()
+                    }
                     
                     Spacer()
                     
@@ -43,8 +52,8 @@ struct HomeView: View {
                                 .fill(Color.red)
                         )
                         .clipShape(Circle())
+                        .padding(.trailing)
                 }
-                .padding(.horizontal)
                 .background(
                     ArcShape(curveSize: 40)
                         .fill(Color.theme.background)
@@ -58,11 +67,6 @@ struct HomeView: View {
                     Spacer()
                     
                     HStack {
-                        Button {
-                            // Do Something
-                        } label: {
-                            
-                        }
                         
                         NavigationLink {
                             AllAlertsView()
@@ -78,7 +82,6 @@ struct HomeView: View {
                             }
                         }
 
-                        
                         Spacer()
                         
                         Button {
@@ -110,8 +113,29 @@ struct HomeView: View {
                 })
                 .ignoresSafeArea(edges: .bottom)
             }
+            
+            HStack(spacing: 0) {
+                SideMenuView()
+                    .offset(x: showMenu ? 0 : -screen.width)
+                
+                Spacer()
+                
+            }
+            .background(
+                Color.black.opacity(showMenu ? 0.2 : 0)
+                    .onTapGesture {
+                        withAnimation() {
+                            showMenu = false
+                        }
+                    }
+            )
+
         }
         .ignoresSafeArea(edges: .bottom)
+        .onAppear {
+            vm.locationManager.delegate = vm
+            vm.locationManager.requestWhenInUseAuthorization()
+        }
         
     }
 }

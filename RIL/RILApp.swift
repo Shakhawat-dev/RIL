@@ -6,12 +6,24 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct RILApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView{
+                ContentView()
+                    .navigationBarHidden(true)
+            }
+            .environmentObject(AuthViewModel())
+            .environment(\.colorScheme, .light)
         }
     }
 }

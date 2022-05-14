@@ -33,15 +33,20 @@ struct CustomNavBarView<Content: View>: View {
                 
                 Spacer(minLength: 0)
                 
+                if !hideBackButton {
+                    backButton
+                        .hidden()
+                }
             }
-            
             .padding(.vertical, 8)
-        
+            .foregroundColor(Color.white)
+            .background(
+                Color.theme.accent.ignoresSafeArea(edges: .top)
+            )
+            
+            content
         }
-        .foregroundColor(Color.white)
-        .background(
-            Color.theme.accent.ignoresSafeArea(edges: .top)
-        )
+
     }
 }
 
@@ -76,7 +81,13 @@ extension CustomNavBarView {
     
     private var titleSection: some View {
         VStack(spacing: 4.0) {
-            content
+//            content
+            
+            Image("logo_with_trans")
+                .renderingMode(.template)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 40)
             
         }
     }

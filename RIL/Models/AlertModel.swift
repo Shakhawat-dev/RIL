@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct AlertModel: Encodable {
+struct AlertModel: Encodable, Decodable {
     let lat: String?
     let lon: String?
     let name: String?
+    let number: String?
     let postid: String?
     let sosCat: String?
     let sosImage: String?

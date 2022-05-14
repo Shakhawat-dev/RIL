@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AlertsRowView: View {
+    var alert: AlertModel?
+    
     var body: some View {
         HStack {
             
@@ -19,21 +21,28 @@ struct AlertsRowView: View {
                 )
                 
             VStack(alignment: .leading, spacing: 4.0) {
-                Text("shakhawat hosaain shahin")
-                    .font(.title3)
-                    .fontWeight(.semibold)
-                    .textCase(.uppercase)
+                if let name = alert?.name {
+                    Text(name)
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .textCase(.uppercase)
+                }
                 
                 Text("Looking for help")
                     .font(.subheadline)
                     .foregroundColor(Color.gray)
                 
-                Text("01910313813")
-                    .font(.subheadline)
-                    .fontWeight(.bold)
+                if let number = alert?.number {
+                    Text(number)
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                }
                 
-                Text("09:47 PM 05/02/2022")
-                    .font(.footnote)
+                if let time = alert?.time {
+                    Text(time)
+                        .font(.footnote)
+                }
+                
             }
             
             Spacer(minLength: 0)

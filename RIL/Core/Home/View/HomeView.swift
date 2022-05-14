@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct HomeView: View {
     @StateObject var vm = HomeViewModel()
@@ -14,6 +15,8 @@ struct HomeView: View {
     
     let screen = UIScreen.main.bounds
     
+    @State private var mapRegion: MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 23.790552, longitude: 90.391769), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+    
     init() {
         UITabBar.appearance().isHidden = true
     }
@@ -21,7 +24,10 @@ struct HomeView: View {
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             
-            Color.green
+//            Color.green
+//            MapView()
+            
+            Map(coordinateRegion: $mapRegion)
             
             VStack {
                 
@@ -45,14 +51,20 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    Image(systemName: "person")
-                        .padding()
-                        .background(
-                            Circle()
-                                .fill(Color.red)
-                        )
-                        .clipShape(Circle())
-                        .padding(.trailing)
+                    NavigationLink(destination: ProfileView()) {
+                        Image(systemName: "person")
+                            .padding()
+                            .background(
+                                Circle()
+                                    .fill(Color.red)
+                            )
+                            .clipShape(Circle())
+                            .padding(.trailing)
+                            .foregroundColor(.white)
+                        
+                    }
+                    
+                    
                 }
                 .background(
                     ArcShape(curveSize: 40)

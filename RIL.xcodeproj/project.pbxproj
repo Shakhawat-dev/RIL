@@ -13,6 +13,9 @@
 		A107982D282D7C9E008C0D54 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A107982C282D7C9E008C0D54 /* AuthViewModel.swift */; };
 		A1079832282EA3C4008C0D54 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1079831282EA3C4008C0D54 /* SideMenuView.swift */; };
 		A1079834282EA9D7008C0D54 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1079833282EA9D7008C0D54 /* MenuItemView.swift */; };
+		A1079837282EECA3008C0D54 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1079836282EECA3008C0D54 /* MapView.swift */; };
+		A1079839282EED4A008C0D54 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1079838282EED4A008C0D54 /* LocationManager.swift */; };
+		A107983B282EEE46008C0D54 /* Coordinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A107983A282EEE46008C0D54 /* Coordinators.swift */; };
 		A127654C282AC7700025D646 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127654B282AC7700025D646 /* HomeViewModel.swift */; };
 		A159016827C297270006283E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A159016727C297270006283E /* HomeView.swift */; };
 		A159016A27C2C6B90006283E /* TabBarCustomShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A159016927C2C6B90006283E /* TabBarCustomShape.swift */; };
@@ -48,6 +51,9 @@
 		A107982C282D7C9E008C0D54 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		A1079831282EA3C4008C0D54 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		A1079833282EA9D7008C0D54 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		A1079836282EECA3008C0D54 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		A1079838282EED4A008C0D54 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A107983A282EEE46008C0D54 /* Coordinators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinators.swift; sourceTree = "<group>"; };
 		A127654B282AC7700025D646 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A127654D282AD1340025D646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A159016727C297270006283E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -145,6 +151,14 @@
 				A1079833282EA9D7008C0D54 /* MenuItemView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A1079835282EEC7B008C0D54 /* UIViewRepresentables */ = {
+			isa = PBXGroup;
+			children = (
+				A1079836282EECA3008C0D54 /* MapView.swift */,
+			);
+			path = UIViewRepresentables;
 			sourceTree = "<group>";
 		};
 		A1276549282AC7530025D646 /* View */ = {
@@ -330,6 +344,8 @@
 		A1E1CD0527BC0E1F00049715 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A1079838282EED4A008C0D54 /* LocationManager.swift */,
+				A107983A282EEE46008C0D54 /* Coordinators.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -353,6 +369,7 @@
 		A1E1CD0827BC0F8400049715 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A1079835282EEC7B008C0D54 /* UIViewRepresentables */,
 				A1890B3928147D9E00047451 /* CustomNavigation */,
 				A16F89D5280DC75A00854963 /* Shapes */,
 				A16F89CE280DBE7800854963 /* Modifiers */,
@@ -465,9 +482,12 @@
 				A159016827C297270006283E /* HomeView.swift in Sources */,
 				A107982D282D7C9E008C0D54 /* AuthViewModel.swift in Sources */,
 				A1079826282D6D04008C0D54 /* AlertModel.swift in Sources */,
+				A1079839282EED4A008C0D54 /* LocationManager.swift in Sources */,
+				A1079837282EECA3008C0D54 /* MapView.swift in Sources */,
 				A179C04A27BD681E0024D0D8 /* AlertsRowView.swift in Sources */,
 				A16F89E5280E04D700854963 /* ProfileView.swift in Sources */,
 				A16F89D8280DC77B00854963 /* ArcShape.swift in Sources */,
+				A107983B282EEE46008C0D54 /* Coordinators.swift in Sources */,
 				A1E1CCF727BC0D9400049715 /* RILApp.swift in Sources */,
 				A16F89D2280DC29200854963 /* CapsuleBackModifier.swift in Sources */,
 				A16F89DE280DFEA700854963 /* AllAlertsView.swift in Sources */,

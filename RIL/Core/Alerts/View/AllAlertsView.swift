@@ -13,16 +13,20 @@ struct AllAlertsView: View {
     let list = Array(0...20)
     
     var body: some View {
-        ZStack {
-            ScrollView {
-                VStack {
-                    ForEach(list, id: \.self) { _ in
-                        AlertsRowView()
+        CustomNavBarView {
+            ZStack {
+                ScrollView {
+                    VStack {
+                        ForEach(vm.alertList, id: \.uid) { _ in
+                            AlertsRowView()
+                        }
                     }
+                    .padding()
                 }
-                .padding()
             }
+            .navigationBarHidden(true)
         }
+        
     }
 }
 

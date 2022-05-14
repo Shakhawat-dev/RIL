@@ -27,7 +27,9 @@ struct HomeView: View {
 //            Color.green
 //            MapView()
             
-            Map(coordinateRegion: $mapRegion)
+//            Map(coordinateRegion: $mapRegion)
+            
+            MapView()
             
             VStack {
                 

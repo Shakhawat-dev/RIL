@@ -17,8 +17,8 @@ struct AllAlertsView: View {
             ZStack {
                 ScrollView {
                     VStack {
-                        ForEach(vm.alertList, id: \.uid) { _ in
-                            AlertsRowView()
+                        ForEach(vm.alertList, id: \.uid) { item in
+                            AlertsRowView(alert: item)
                         }
                     }
                     .padding()

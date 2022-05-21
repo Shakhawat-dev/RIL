@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 
+
 class AllAlertsViewModel: ObservableObject {
     @Published var alertList: [AlertModel] = []
     
@@ -60,17 +61,32 @@ class AllAlertsViewModel: ObservableObject {
               return
             }
 
+                self.alertList.removeAll()
+                
 //            json["id"] = snapshot.key
+                json.forEach { value in
+                    print(value.value)
+                    do {
+                        let alertData = try JSONSerialization.data(withJSONObject: value.value, options: .fragmentsAllowed)
+                        print(alertData)
+                        
+                        let alerts = try self.decoder.decode(AlertModel.self, from: alertData)
+                        self.alertList.append(alerts)
+                        print(self.alertList)
+                    } catch {
+                        print("an error occurred", error)
+                      }
+                }
 
-            do {
-              let alertData = try JSONSerialization.data(withJSONObject: json)
-                print(alertData)
-              let alerts = try self.decoder.decode(AlertModel.self, from: alertData)
-                print(alerts)
-              self.alertList.append(alerts)
-            } catch {
-              print("an error occurred", error)
-            }
+//            do {
+//                let alertData = try JSONSerialization.data(withJSONObject: json)
+//                print(alertData)
+////              let alerts = try self.decoder.decode(AlertModel.self, from: alertData)
+////                print(alerts)
+////              self.alertList.append(alerts)
+//            } catch {
+//              print("an error occurred", error)
+//            }
           }
     }
 }

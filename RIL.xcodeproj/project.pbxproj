@@ -42,6 +42,7 @@
 		A1E1CCF927BC0D9400049715 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1CCF827BC0D9400049715 /* ContentView.swift */; };
 		A1E1CCFB27BC0D9600049715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1E1CCFA27BC0D9600049715 /* Assets.xcassets */; };
 		A1E1CCFE27BC0D9600049715 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1E1CCFD27BC0D9600049715 /* Preview Assets.xcassets */; };
+		A1E4041C283A890E00D5EBC4 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E4041B283A890E00D5EBC4 /* LocationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		A1E1CCF827BC0D9400049715 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A1E1CCFA27BC0D9600049715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1E1CCFD27BC0D9600049715 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A1E4041B283A890E00D5EBC4 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 			children = (
 				A179C04927BD681E0024D0D8 /* AlertsRowView.swift */,
 				A16F89DD280DFEA700854963 /* AllAlertsView.swift */,
+				A1E4041B283A890E00D5EBC4 /* LocationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				A16F89C9280DB85600854963 /* RegistrationView.swift in Sources */,
 				A16F89E9280E06E400854963 /* DetailsView.swift in Sources */,
 				A16F89CB280DB8E900854963 /* Color.swift in Sources */,
+				A1E4041C283A890E00D5EBC4 /* LocationView.swift in Sources */,
 				A1079823282C4260008C0D54 /* AllAlertsViewModel.swift in Sources */,
 				A16F89D4280DC3CF00854963 /* RoundedButtonView.swift in Sources */,
 			);

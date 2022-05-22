@@ -48,11 +48,18 @@ struct AlertsRowView: View {
             Spacer(minLength: 0)
             
             VStack {
-                Text("View Location")
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color.white)
-                    .multilineTextAlignment(.center)
-                    .textCase(.uppercase)
+                NavigationLink {
+                    LocationView(alert: alert)
+                        .navigationBarHidden(true)
+                } label: {
+                    Text("View Location")
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color.white)
+                        .multilineTextAlignment(.center)
+                        .textCase(.uppercase)
+                }
+
+                
                     
             }
             .frame(width: 96, height: 96, alignment: .center)

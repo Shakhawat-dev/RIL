@@ -19,6 +19,7 @@ struct AllAlertsView: View {
                     VStack {
                         ForEach(vm.alertList, id: \.uid) { item in
                             AlertsRowView(alert: item)
+                            
                         }
                     }
                     .padding()

@@ -22,7 +22,7 @@ struct CustomNavBarView<Content: View>: View {
     
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             HStack(alignment: .center) {
                 if !hideBackButton {
                     backButton

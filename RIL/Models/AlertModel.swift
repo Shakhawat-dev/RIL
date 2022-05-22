@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct AlertModel: Encodable, Decodable {
+struct AlertModel: Encodable, Decodable, Identifiable {
+    let id = UUID().uuidString
     let lat: String?
     let lon: String?
     let name: String?

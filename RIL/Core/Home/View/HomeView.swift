@@ -148,8 +148,8 @@ extension HomeView {
                 
                 Spacer()
                 
-                Button {
-                    // Do Something
+                NavigationLink {
+                    AskHelpView()
                 } label: {
                     VStack {
                         Image(systemName: "camera.fill")

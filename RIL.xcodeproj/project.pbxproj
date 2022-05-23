@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11BC9FDC283B493D00797516 /* AskHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9FDB283B493D00797516 /* AskHelpView.swift */; };
+		11BC9FDE283B4A9500797516 /* AskHelpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9FDD283B4A9500797516 /* AskHelpViewModel.swift */; };
+		11BC9FE0283B4BBD00797516 /* EmergencyChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9FDF283B4BBD00797516 /* EmergencyChipView.swift */; };
 		A1079823282C4260008C0D54 /* AllAlertsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1079822282C4260008C0D54 /* AllAlertsViewModel.swift */; };
 		A1079826282D6D04008C0D54 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1079825282D6D04008C0D54 /* AlertModel.swift */; };
 		A107982B282D7A11008C0D54 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A107982A282D7A11008C0D54 /* SignInView.swift */; };
@@ -46,6 +49,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11BC9FDB283B493D00797516 /* AskHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskHelpView.swift; sourceTree = "<group>"; };
+		11BC9FDD283B4A9500797516 /* AskHelpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskHelpViewModel.swift; sourceTree = "<group>"; };
+		11BC9FDF283B4BBD00797516 /* EmergencyChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyChipView.swift; sourceTree = "<group>"; };
 		A1079822282C4260008C0D54 /* AllAlertsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAlertsViewModel.swift; sourceTree = "<group>"; };
 		A1079825282D6D04008C0D54 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		A107982A282D7A11008C0D54 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -97,6 +103,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11BC9FD8283B490900797516 /* AskHelp */ = {
+			isa = PBXGroup;
+			children = (
+				11BC9FDA283B491F00797516 /* ViewModel */,
+				11BC9FD9283B491700797516 /* View */,
+			);
+			path = AskHelp;
+			sourceTree = "<group>";
+		};
+		11BC9FD9283B491700797516 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11BC9FDB283B493D00797516 /* AskHelpView.swift */,
+				11BC9FDF283B4BBD00797516 /* EmergencyChipView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11BC9FDA283B491F00797516 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				11BC9FDD283B4A9500797516 /* AskHelpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A1079821282C424C008C0D54 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +364,7 @@
 		A1E1CD0427BC0DD300049715 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				11BC9FD8283B490900797516 /* AskHelp */,
 				A107982E282EA26B008C0D54 /* Menu */,
 				A1079827282D79E6008C0D54 /* Auth */,
 				A16F89E6280E06C200854963 /* Details */,
@@ -478,11 +511,13 @@
 				A127654C282AC7700025D646 /* HomeViewModel.swift in Sources */,
 				A179C04527BC1FB60024D0D8 /* SideMenu.swift in Sources */,
 				A1079834282EA9D7008C0D54 /* MenuItemView.swift in Sources */,
+				11BC9FDE283B4A9500797516 /* AskHelpViewModel.swift in Sources */,
 				A1E1CCF927BC0D9400049715 /* ContentView.swift in Sources */,
 				A16F89D0280DBEA000854963 /* OutlinedShadowModifier.swift in Sources */,
 				A16F89CD280DBE3600854963 /* TitledEditTextView.swift in Sources */,
 				A179C04727BD5E970024D0D8 /* CustomNavBarView.swift in Sources */,
 				A159016827C297270006283E /* HomeView.swift in Sources */,
+				11BC9FE0283B4BBD00797516 /* EmergencyChipView.swift in Sources */,
 				A107982D282D7C9E008C0D54 /* AuthViewModel.swift in Sources */,
 				A1079826282D6D04008C0D54 /* AlertModel.swift in Sources */,
 				A1079839282EED4A008C0D54 /* LocationManager.swift in Sources */,
@@ -494,6 +529,7 @@
 				A1E1CCF727BC0D9400049715 /* RILApp.swift in Sources */,
 				A16F89D2280DC29200854963 /* CapsuleBackModifier.swift in Sources */,
 				A16F89DE280DFEA700854963 /* AllAlertsView.swift in Sources */,
+				11BC9FDC283B493D00797516 /* AskHelpView.swift in Sources */,
 				A107982B282D7A11008C0D54 /* SignInView.swift in Sources */,
 				A16F89C9280DB85600854963 /* RegistrationView.swift in Sources */,
 				A16F89E9280E06E400854963 /* DetailsView.swift in Sources */,

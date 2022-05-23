@@ -45,6 +45,8 @@ struct CustomNavBarView<Content: View>: View {
             )
             
             content
+            
+            Spacer(minLength: 0)
         }
 
     }

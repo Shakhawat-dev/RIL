@@ -9,7 +9,8 @@ import Foundation
 import Firebase
 
 class ProfileViewModel: ObservableObject {
-    @Published var profileList: [ProfileModel] = []
+//    @Published var profileList: [ProfileModel] = []
+    @Published var userProfile: ProfileModel?
     
     private let database = Firebase.Database.database()
     var ref: DatabaseReference!
@@ -20,7 +21,7 @@ class ProfileViewModel: ObservableObject {
       }
       let ref = Database.database()
         .reference()
-        .child("users")
+        .child("users/\(uid)")
       return ref
     }()
     
@@ -55,26 +56,28 @@ class ProfileViewModel: ObservableObject {
             .observe(.value) { [weak self] snapshot in
             guard
               let self = self,
-              var json = snapshot.value as? [String: Any]
+              let json = snapshot.value as? [String: Any]
             else {
               return
             }
 
-                self.profileList.removeAll()
+//                self.profileList.removeAll()
                 
-                json.forEach { value in
-                    print(value.value)
+//                json.forEach { value in
+//                    print(value.value)
                     do {
-                        let alertData = try JSONSerialization.data(withJSONObject: value.value, options: .fragmentsAllowed)
-                        print(alertData)
+                        let userData = try JSONSerialization.data(withJSONObject: json, options: .fragmentsAllowed)
+                        print(userData)
                         
-                        let  = try self.decoder.decode(AlertModel.self, from: alertData)
-                        self.alertList.append(alerts)
-                        print(self.alertList)
+                        self.userProfile = try self.decoder.decode(ProfileModel.self, from: userData)
+//                        self.profileList.append(profiles)
+//                        print(self.profileList)
                     } catch {
                         print("an error occurred", error)
                       }
-                }
+//                }
+                
+                print(self.userProfile)
           }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProfileView: View {
     @StateObject var vm: ProfileViewModel = ProfileViewModel()
@@ -27,7 +28,7 @@ struct ProfileView: View {
                 ScrollView {
                     VStack {
                         VStack {
-                            Text("Hey Shakhawat Hossain Shahin")
+                            Text("Hey \(vm.userProfile?.name ?? "" )")
                                 .font(.title2)
                                 .fontWeight(.medium)
                             
@@ -35,15 +36,28 @@ struct ProfileView: View {
                                 Button {
                                     // Do Something
                                 } label: {
-                                    Image(systemName: "person")
-                                        .resizable()
-                                        .frame(width: 64, height: 64)
-                                        .padding()
-                                        .clipShape(Circle())
-                                        .background(
-                                            Circle()
-                                                .fill(.white)
-                                        )
+                                    if let pp = vm.userProfile?.pp {
+                                        KFImage(URL(string: pp))
+                                            .resizable()
+                                            .frame(width: 64, height: 64)
+                                            .padding()
+                                            .clipShape(Circle())
+                                            .background(
+                                                Circle()
+                                                    .fill(.white)
+                                            )
+                                    } else {
+                                        Image(systemName: "person")
+                                            .resizable()
+                                            .frame(width: 64, height: 64)
+                                            .padding()
+                                            .clipShape(Circle())
+                                            .background(
+                                                Circle()
+                                                    .fill(.white)
+                                            )
+                                    }
+                                    
                                 }
 
                                 

@@ -74,7 +74,7 @@ struct AskHelpView: View {
                                     RoundedRectangle(cornerRadius: 8)
                                         .fill(.white)
                                 )
-                                .frame(height: 64)
+                                .frame(height: 96)
                         }
                         
                         VStack(alignment: .leading) {
@@ -94,7 +94,7 @@ struct AskHelpView: View {
                         }
                         
                         Button {
-                            
+                            vm.postAlert()
                         } label: {
                             Text("ASK FOR HELP NOW")
                                 .foregroundColor(.white)

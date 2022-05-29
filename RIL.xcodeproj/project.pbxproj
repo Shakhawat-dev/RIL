@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11BB0D51284375E000E4FCC5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB0D50284375E000E4FCC5 /* ProfileViewModel.swift */; };
+		11BB0D532843790000E4FCC5 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB0D522843790000E4FCC5 /* ProfileModel.swift */; };
 		11BC9FDC283B493D00797516 /* AskHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9FDB283B493D00797516 /* AskHelpView.swift */; };
 		11BC9FDE283B4A9500797516 /* AskHelpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9FDD283B4A9500797516 /* AskHelpViewModel.swift */; };
 		11BC9FE0283B4BBD00797516 /* EmergencyChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9FDF283B4BBD00797516 /* EmergencyChipView.swift */; };
@@ -76,6 +78,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		11BB0D50284375E000E4FCC5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		11BB0D522843790000E4FCC5 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		11BC9FDB283B493D00797516 /* AskHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskHelpView.swift; sourceTree = "<group>"; };
 		11BC9FDD283B4A9500797516 /* AskHelpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskHelpViewModel.swift; sourceTree = "<group>"; };
 		11BC9FDF283B4BBD00797516 /* EmergencyChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyChipView.swift; sourceTree = "<group>"; };
@@ -141,6 +145,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11BB0D4F284375CA00E4FCC5 /* ProfileViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				11BB0D50284375E000E4FCC5 /* ProfileViewModel.swift */,
+			);
+			path = ProfileViewModel;
+			sourceTree = "<group>";
+		};
 		11BC9FD8283B490900797516 /* AskHelp */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				A1079825282D6D04008C0D54 /* AlertModel.swift */,
+				11BB0D522843790000E4FCC5 /* ProfileModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -320,6 +333,7 @@
 		A16F89E2280E04B900854963 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				11BB0D4F284375CA00E4FCC5 /* ProfileViewModel */,
 				A16F89E3280E04C400854963 /* View */,
 			);
 			path = Profile;
@@ -598,6 +612,7 @@
 				A1079832282EA3C4008C0D54 /* SideMenuView.swift in Sources */,
 				A159016A27C2C6B90006283E /* TabBarCustomShape.swift in Sources */,
 				A127654C282AC7700025D646 /* HomeViewModel.swift in Sources */,
+				11BB0D532843790000E4FCC5 /* ProfileModel.swift in Sources */,
 				A179C04527BC1FB60024D0D8 /* SideMenu.swift in Sources */,
 				A1079834282EA9D7008C0D54 /* MenuItemView.swift in Sources */,
 				11BC9FDE283B4A9500797516 /* AskHelpViewModel.swift in Sources */,
@@ -609,6 +624,7 @@
 				11BC9FE0283B4BBD00797516 /* EmergencyChipView.swift in Sources */,
 				A107982D282D7C9E008C0D54 /* AuthViewModel.swift in Sources */,
 				A1079826282D6D04008C0D54 /* AlertModel.swift in Sources */,
+				11BB0D51284375E000E4FCC5 /* ProfileViewModel.swift in Sources */,
 				A1079839282EED4A008C0D54 /* LocationManager.swift in Sources */,
 				A1079837282EECA3008C0D54 /* MapView.swift in Sources */,
 				A179C04A27BD681E0024D0D8 /* AlertsRowView.swift in Sources */,

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @StateObject var vm: ProfileViewModel = ProfileViewModel()
+    
     @State var email: String = ""
     @State var phone: String = ""
     @State var address: String = ""

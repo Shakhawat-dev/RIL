@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		115163242844915A005FB928 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115163232844915A005FB928 /* RegistrationViewModel.swift */; };
 		11BB0D51284375E000E4FCC5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB0D50284375E000E4FCC5 /* ProfileViewModel.swift */; };
 		11BB0D532843790000E4FCC5 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB0D522843790000E4FCC5 /* ProfileModel.swift */; };
 		11BB0D5628438CEB00E4FCC5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 11BB0D5528438CEB00E4FCC5 /* Kingfisher */; };
@@ -79,6 +80,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		115163232844915A005FB928 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewModel.swift; path = RIL/Models/RegistrationViewModel.swift; sourceTree = SOURCE_ROOT; };
 		11BB0D50284375E000E4FCC5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		11BB0D522843790000E4FCC5 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		11BC9FDB283B493D00797516 /* AskHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskHelpView.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 		A16F89C5280DB82400854963 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				115163232844915A005FB928 /* RegistrationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1079832282EA3C4008C0D54 /* SideMenuView.swift in Sources */,
+				115163242844915A005FB928 /* RegistrationViewModel.swift in Sources */,
 				A159016A27C2C6B90006283E /* TabBarCustomShape.swift in Sources */,
 				A127654C282AC7700025D646 /* HomeViewModel.swift in Sources */,
 				11BB0D532843790000E4FCC5 /* ProfileModel.swift in Sources */,

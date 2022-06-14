@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		115163242844915A005FB928 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115163232844915A005FB928 /* RegistrationViewModel.swift */; };
+		11B8AF142845D9AC005AFB41 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B8AF132845D9AC005AFB41 /* ImagePicker.swift */; };
+		11B8AF172845DA4E005AFB41 /* PhotoEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B8AF162845DA4E005AFB41 /* PhotoEnum.swift */; };
+		11BB0D51284375E000E4FCC5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB0D50284375E000E4FCC5 /* ProfileViewModel.swift */; };
+		11BB0D532843790000E4FCC5 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB0D522843790000E4FCC5 /* ProfileModel.swift */; };
+		11BB0D5628438CEB00E4FCC5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 11BB0D5528438CEB00E4FCC5 /* Kingfisher */; };
 		11BC9FDC283B493D00797516 /* AskHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9FDB283B493D00797516 /* AskHelpView.swift */; };
 		11BC9FDE283B4A9500797516 /* AskHelpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9FDD283B4A9500797516 /* AskHelpViewModel.swift */; };
 		11BC9FE0283B4BBD00797516 /* EmergencyChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9FDF283B4BBD00797516 /* EmergencyChipView.swift */; };
@@ -76,6 +82,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		115163232844915A005FB928 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewModel.swift; path = RIL/Models/RegistrationViewModel.swift; sourceTree = SOURCE_ROOT; };
+		11B8AF132845D9AC005AFB41 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		11B8AF162845DA4E005AFB41 /* PhotoEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEnum.swift; sourceTree = "<group>"; };
+		11BB0D50284375E000E4FCC5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		11BB0D522843790000E4FCC5 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		11BC9FDB283B493D00797516 /* AskHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskHelpView.swift; sourceTree = "<group>"; };
 		11BC9FDD283B4A9500797516 /* AskHelpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskHelpViewModel.swift; sourceTree = "<group>"; };
 		11BC9FDF283B4BBD00797516 /* EmergencyChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyChipView.swift; sourceTree = "<group>"; };
@@ -131,6 +142,7 @@
 			files = (
 				A1890B4228148ECC00047451 /* FirebaseCrashlytics in Frameworks */,
 				A1890B3E28148ECC00047451 /* FirebaseAnalytics in Frameworks */,
+				11BB0D5628438CEB00E4FCC5 /* Kingfisher in Frameworks */,
 				A1890B4428148ECC00047451 /* FirebaseDatabase in Frameworks */,
 				A1890B4628148ECC00047451 /* FirebaseFirestore in Frameworks */,
 				A1890B4028148ECC00047451 /* FirebaseAuth in Frameworks */,
@@ -141,6 +153,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11B8AF152845DA3B005AFB41 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				11B8AF162845DA4E005AFB41 /* PhotoEnum.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		11BB0D4F284375CA00E4FCC5 /* ProfileViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				11BB0D50284375E000E4FCC5 /* ProfileViewModel.swift */,
+			);
+			path = ProfileViewModel;
+			sourceTree = "<group>";
+		};
 		11BC9FD8283B490900797516 /* AskHelp */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				A1079825282D6D04008C0D54 /* AlertModel.swift */,
+				11BB0D522843790000E4FCC5 /* ProfileModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,6 +308,7 @@
 		A16F89C5280DB82400854963 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				115163232844915A005FB928 /* RegistrationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -320,6 +350,7 @@
 		A16F89E2280E04B900854963 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				11BB0D4F284375CA00E4FCC5 /* ProfileViewModel */,
 				A16F89E3280E04C400854963 /* View */,
 			);
 			path = Profile;
@@ -387,14 +418,15 @@
 		A1E1CCF527BC0D9400049715 /* RIL */ = {
 			isa = PBXGroup;
 			children = (
+				11B8AF152845DA3B005AFB41 /* Others */,
 				A1079824282D6B13008C0D54 /* Models */,
-				A127654D282AD1340025D646 /* Info.plist */,
 				A1E1CD0927BC0F9600049715 /* Extensions */,
 				A1E1CD0627BC0E2E00049715 /* Services */,
 				A1E1CD0527BC0E1F00049715 /* Utilities */,
 				A1E1CD0427BC0DD300049715 /* Core */,
 				A1E1CCF627BC0D9400049715 /* RILApp.swift */,
 				A1E1CCF827BC0D9400049715 /* ContentView.swift */,
+				A127654D282AD1340025D646 /* Info.plist */,
 				A1890B3A2814870A00047451 /* GoogleService-Info.plist */,
 				A1E1CCFA27BC0D9600049715 /* Assets.xcassets */,
 				A1E1CCFC27BC0D9600049715 /* Preview Content */,
@@ -431,6 +463,7 @@
 			children = (
 				A1079838282EED4A008C0D54 /* LocationManager.swift */,
 				A107983A282EEE46008C0D54 /* Coordinators.swift */,
+				11B8AF132845D9AC005AFB41 /* ImagePicker.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -516,6 +549,7 @@
 				A1890B4328148ECC00047451 /* FirebaseDatabase */,
 				A1890B4528148ECC00047451 /* FirebaseFirestore */,
 				11BC9FF2283BA80300797516 /* OneSignal */,
+				11BB0D5528438CEB00E4FCC5 /* Kingfisher */,
 			);
 			productName = RIL;
 			productReference = A1E1CCF327BC0D9400049715 /* RIL.app */;
@@ -551,6 +585,7 @@
 			packageReferences = (
 				A1890B3C28148ECC00047451 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				11BC9FF1283BA80300797516 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+				11BB0D5428438CEB00E4FCC5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = A1E1CCF427BC0D9400049715 /* Products */;
 			projectDirPath = "";
@@ -596,8 +631,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1079832282EA3C4008C0D54 /* SideMenuView.swift in Sources */,
+				115163242844915A005FB928 /* RegistrationViewModel.swift in Sources */,
 				A159016A27C2C6B90006283E /* TabBarCustomShape.swift in Sources */,
 				A127654C282AC7700025D646 /* HomeViewModel.swift in Sources */,
+				11BB0D532843790000E4FCC5 /* ProfileModel.swift in Sources */,
 				A179C04527BC1FB60024D0D8 /* SideMenu.swift in Sources */,
 				A1079834282EA9D7008C0D54 /* MenuItemView.swift in Sources */,
 				11BC9FDE283B4A9500797516 /* AskHelpViewModel.swift in Sources */,
@@ -609,9 +646,12 @@
 				11BC9FE0283B4BBD00797516 /* EmergencyChipView.swift in Sources */,
 				A107982D282D7C9E008C0D54 /* AuthViewModel.swift in Sources */,
 				A1079826282D6D04008C0D54 /* AlertModel.swift in Sources */,
+				11BB0D51284375E000E4FCC5 /* ProfileViewModel.swift in Sources */,
+				11B8AF142845D9AC005AFB41 /* ImagePicker.swift in Sources */,
 				A1079839282EED4A008C0D54 /* LocationManager.swift in Sources */,
 				A1079837282EECA3008C0D54 /* MapView.swift in Sources */,
 				A179C04A27BD681E0024D0D8 /* AlertsRowView.swift in Sources */,
+				11B8AF172845DA4E005AFB41 /* PhotoEnum.swift in Sources */,
 				A16F89E5280E04D700854963 /* ProfileView.swift in Sources */,
 				A16F89D8280DC77B00854963 /* ArcShape.swift in Sources */,
 				A107983B282EEE46008C0D54 /* Coordinators.swift in Sources */,
@@ -905,6 +945,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		11BB0D5428438CEB00E4FCC5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		11BC9FF1283BA80300797516 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
@@ -925,6 +973,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		11BB0D5528438CEB00E4FCC5 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11BB0D5428438CEB00E4FCC5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		11BC9FF2283BA80300797516 /* OneSignal */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 11BC9FF1283BA80300797516 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;

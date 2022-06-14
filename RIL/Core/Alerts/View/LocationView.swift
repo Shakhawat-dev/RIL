@@ -42,6 +42,6 @@ struct LocationView: View {
 
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationView(alert: AlertModel(lat: "20.0", lon: "21.0", name: "", number: "", postid: "", sosCat: "", sosImage: "", sosMsg: "", time: "", uid: "", userImage: ""))
+        LocationView(alert: AlertModel(id: "", lat: "20.0", lon: "21.0", name: "", number: "", sosCat: "", sosImage: "", sosMsg: "", time: "", uid: "", userImage: ""))
     }
 }

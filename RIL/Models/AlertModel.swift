@@ -8,18 +8,33 @@
 import Foundation
 
 struct AlertModel: Encodable, Decodable, Identifiable {
-    let id = UUID().uuidString
+    let id: String?
     let lat: String?
     let lon: String?
     let name: String?
     let number: String?
-    let postid: String?
+//    let postid: String?
     let sosCat: String?
     let sosImage: String?
     let sosMsg: String?
     let time: String?
     let uid: String?
     let userImage: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "postid"
+        case lat
+        case lon
+        case name
+        case number
+//        case postid
+        case sosCat
+        case sosImage
+        case sosMsg
+        case time
+        case uid
+        case userImage
+    }
 }
 
 extension Encodable {

@@ -8,16 +8,10 @@
 import SwiftUI
 
 struct RegistrationView: View {
-    @State var email: String = ""
-    @State var phone: String = ""
-    @State var address: String = ""
-    @State var password: String = ""
-    
-    @State var emergency1: String = ""
-    @State var emergency2: String = ""
-    @State var emergency3: String = ""
+    @ObservedObject var vm = RegistrationViewModel()
     
     var body: some View {
+        
         ZStack {
             Color.theme.background
             
@@ -55,13 +49,15 @@ struct RegistrationView: View {
                     .padding()
                     
                     Group {
-                        TitledEditTextView(title: "Email", placeHolder: "Your Email", text: $email)
+                        TitledEditTextView(title: "Name", placeHolder: "Your Name", text: $vm.name)
                         
-                        TitledEditTextView(title: "Phone Number", placeHolder: "Your Phone", text: $phone)
+                        TitledEditTextView(title: "Email", placeHolder: "Your Email", text: $vm.email)
                         
-                        TitledEditTextView(title: "Address", placeHolder: "Address Ex. Banani", text: $address)
+                        TitledEditTextView(title: "Phone Number", placeHolder: "Your Phone", text: $vm.phone)
                         
-                        TitledEditTextView(title: "Password", placeHolder: "Password", text: $password, isSecured: true)
+                        TitledEditTextView(title: "Address", placeHolder: "Address Ex. Banani", text: $vm.address)
+                        
+                        TitledEditTextView(title: "Password", placeHolder: "Password", text: $vm.password, isSecured: true)
                     }
                     
                     Group {
@@ -71,11 +67,11 @@ struct RegistrationView: View {
                                 .fontWeight(.medium)
                                 .padding(.vertical)
                             
-                            TitledEditTextView(title: "Emergency 1", placeHolder: "Emergency phone 1", text: $emergency1)
+                            TitledEditTextView(title: "Emergency 1", placeHolder: "Emergency phone 1", text: $vm.emergency1)
                             
-                            TitledEditTextView(title: "Emergency 2", placeHolder: "Emergency phone 1", text: $emergency2)
+                            TitledEditTextView(title: "Emergency 2", placeHolder: "Emergency phone 1", text: $vm.emergency2)
                             
-                            TitledEditTextView(title: "Emergency 3", placeHolder: "Emergency phone 1", text: $emergency3)
+                            TitledEditTextView(title: "Emergency 3", placeHolder: "Emergency phone 1", text: $vm.emergency3)
                         }
                     }
                     
@@ -83,6 +79,7 @@ struct RegistrationView: View {
                         VStack(spacing: 16.0) {
                             Button {
                                 // Do something
+                                vm.createUser()
                             } label: {
                                 RoundedButtonView(title: "Register")
                             }
@@ -91,8 +88,8 @@ struct RegistrationView: View {
                                 Text("Already Have Account?")
                                     .foregroundColor(.gray)
                                 
-                                Button {
-                                    // DO SOMETHING
+                                NavigationLink {
+                                    SignInView()
                                 } label: {
                                     Text("Sign In")
                                 }

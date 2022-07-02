@@ -11,15 +11,7 @@ import Kingfisher
 struct ProfileView: View {
     @StateObject var vm: ProfileViewModel = ProfileViewModel()
     
-    @State var email: String = ""
-    @State var phone: String = ""
-    @State var address: String = ""
-    @State var password: String = ""
-    
-    @State var emergency1: String = ""
-    @State var emergency2: String = ""
-    @State var emergency3: String = ""
-    
+
     var body: some View {
         CustomNavBarView {
             ZStack {
@@ -72,11 +64,11 @@ struct ProfileView: View {
                         .padding()
                         
                         Group {
-                            TitledEditTextView(title: "Email", placeHolder: "Your Email", text: $email)
+                            TitledEditTextView(title: "Email", placeHolder: "Your Email", text: $vm.email)
                             
-                            TitledEditTextView(title: "Phone Number", placeHolder: "Your Phone", text: $phone)
+                            TitledEditTextView(title: "Phone Number", placeHolder: "Your Phone", text: $vm.phone)
                             
-                            TitledEditTextView(title: "Address", placeHolder: "Address Ex. Banani", text: $address)
+                            TitledEditTextView(title: "Address", placeHolder: "Address Ex. Banani", text: $vm.address)
                         }
                         
                         Group {
@@ -86,11 +78,11 @@ struct ProfileView: View {
                                     .fontWeight(.medium)
                                     .padding(.vertical)
                                 
-                                TitledEditTextView(title: "Emergency 1", placeHolder: "Emergency phone 1", text: $emergency1)
+                                TitledEditTextView(title: "Emergency 1", placeHolder: "Emergency phone 1", text: $vm.emergency1)
                                 
-                                TitledEditTextView(title: "Emergency 2", placeHolder: "Emergency phone 1", text: $emergency2)
+                                TitledEditTextView(title: "Emergency 2", placeHolder: "Emergency phone 1", text: $vm.emergency2)
                                 
-                                TitledEditTextView(title: "Emergency 3", placeHolder: "Emergency phone 1", text: $emergency3)
+                                TitledEditTextView(title: "Emergency 3", placeHolder: "Emergency phone 1", text: $vm.emergency3)
                             }
                         }
                         

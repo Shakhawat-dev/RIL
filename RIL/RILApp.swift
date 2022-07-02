@@ -23,6 +23,7 @@ struct RILApp: App {
                     .navigationBarHidden(true)
             }
             .environmentObject(AuthViewModel())
+            .environmentObject(ProfileViewModel())
             .environment(\.colorScheme, .light)
         }
     }

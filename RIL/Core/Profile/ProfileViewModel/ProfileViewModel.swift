@@ -7,10 +7,21 @@
 
 import Foundation
 import Firebase
+import SwiftUI
 
 class ProfileViewModel: ObservableObject {
 //    @Published var profileList: [ProfileModel] = []
     @Published var userProfile: ProfileModel?
+    
+    @Published var email: String = ""
+    @Published var phone: String = ""
+    @Published var address: String = ""
+    @Published var password: String = ""
+    
+    @Published var emergency1: String = ""
+    @Published var emergency2: String = ""
+    @Published var emergency3: String = ""
+    
     
     private let database = Firebase.Database.database()
     var ref: DatabaseReference!
@@ -70,6 +81,7 @@ class ProfileViewModel: ObservableObject {
                         print(userData)
                         
                         self.userProfile = try self.decoder.decode(ProfileModel.self, from: userData)
+                        self.setData(userProfile: self.userProfile)
 //                        self.profileList.append(profiles)
 //                        print(self.profileList)
                     } catch {
@@ -79,5 +91,24 @@ class ProfileViewModel: ObservableObject {
                 
                 print(self.userProfile)
           }
+    }
+    
+    func setData(userProfile: ProfileModel?) {
+        email = userProfile?.mail ?? ""
+        phone = userProfile?.ph ?? ""
+        address = userProfile?.address ?? ""
+        
+//        if let eNum1 = userProfile?.emergencyNumber?[0] {
+//            emergency1 = eNum1
+//        }
+//        if let eNum2 = userProfile?.emergencyNumber?[1] {
+//            emergency2 = eNum2
+//        }
+//        if let eNum3 = userProfile?.emergencyNumber?[2] {
+//            emergency3 = eNum3
+//        }
+////        emergency1 = userProfile?.emergencyNumber?[0] ?? ""
+//        emergency2 = userProfile?.emergencyNumber?[1] ?? ""
+//        emergency3 = userProfile?.emergencyNumber?[2] ?? ""
     }
 }

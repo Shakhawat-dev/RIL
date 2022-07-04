@@ -16,6 +16,8 @@ enum EmergencyType {
 
 struct AskHelpView: View {
     @StateObject private var vm = AskHelpViewModel()
+    @ObservedObject private var locationManager = LocationManager()
+    @EnvironmentObject private var profileVM: ProfileViewModel
     
     var body: some View {
         ZStack {
@@ -33,6 +35,7 @@ struct AskHelpView: View {
                                 Button {
                                     // Do Something
                                     vm.emergencyType = .fuel
+                                    vm.emergencyTypeText = "Refuel"
                                 } label: {
                                     EmergencyChipView(image: "fuel", title: "Fuel", isSelected: vm.emergencyType == .fuel)
                                 }
@@ -40,6 +43,7 @@ struct AskHelpView: View {
                                 Button {
                                     // Do Something
                                     vm.emergencyType = .accident
+                                    vm.emergencyTypeText = "Accident"
                                 } label: {
                                     EmergencyChipView(image: "accident", title: "Accident", isSelected: vm.emergencyType == .accident)
                                 }
@@ -47,6 +51,7 @@ struct AskHelpView: View {
                                 Button {
                                     // Do Something
                                     vm.emergencyType = .damage
+                                    vm.emergencyTypeText = "Malfunciton"
                                 } label: {
                                     EmergencyChipView(image: "bike", title: "Damage", isSelected: vm.emergencyType == .damage)
                                 }
@@ -54,6 +59,7 @@ struct AskHelpView: View {
                                 Button {
                                     // Do Something
                                     vm.emergencyType = .other
+                                    vm.emergencyTypeText = "Other"
                                 } label: {
                                     EmergencyChipView(image: "emm", title: "Other", isSelected: vm.emergencyType == .other)
                                 }
@@ -68,7 +74,7 @@ struct AskHelpView: View {
                                 .font(.title3)
                                 .bold()
                             
-                            TextEditor(text: $vm.shortNoteText)
+                            TextEditor(text: $vm.emergencyTypeText)
                                 .padding()
                                 .background(
                                     RoundedRectangle(cornerRadius: 8)
@@ -94,7 +100,11 @@ struct AskHelpView: View {
                         }
                         
                         Button {
-                            vm.postAlert()
+                            if let location = locationManager.location?.coordinate {
+                                vm.postAlert(lat: "\(location.latitude)", long: "\(location.longitude)", name: profileVM.userProfile?.name ?? "", number: profileVM.phone)
+                            }
+                            
+                            
                         } label: {
                             Text("ASK FOR HELP NOW")
                                 .foregroundColor(.white)

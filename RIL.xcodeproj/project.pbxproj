@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		115163242844915A005FB928 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115163232844915A005FB928 /* RegistrationViewModel.swift */; };
+		11ADF5532872C7C400DF22E6 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 11ADF5522872C7C400DF22E6 /* OneSignal */; };
+		11ADF5562872C8EE00DF22E6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 11ADF5552872C8EE00DF22E6 /* Kingfisher */; };
 		11B8AF142845D9AC005AFB41 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B8AF132845D9AC005AFB41 /* ImagePicker.swift */; };
 		11B8AF172845DA4E005AFB41 /* PhotoEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B8AF162845DA4E005AFB41 /* PhotoEnum.swift */; };
 		11BB0D51284375E000E4FCC5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB0D50284375E000E4FCC5 /* ProfileViewModel.swift */; };
 		11BB0D532843790000E4FCC5 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB0D522843790000E4FCC5 /* ProfileModel.swift */; };
-		11BB0D5628438CEB00E4FCC5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 11BB0D5528438CEB00E4FCC5 /* Kingfisher */; };
 		11BC9FDC283B493D00797516 /* AskHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9FDB283B493D00797516 /* AskHelpView.swift */; };
 		11BC9FDE283B4A9500797516 /* AskHelpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9FDD283B4A9500797516 /* AskHelpViewModel.swift */; };
 		11BC9FE0283B4BBD00797516 /* EmergencyChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9FDF283B4BBD00797516 /* EmergencyChipView.swift */; };
 		11BC9FE8283BA5C300797516 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9FE7283BA5C300797516 /* NotificationService.swift */; };
 		11BC9FEC283BA5C300797516 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 11BC9FE5283BA5C300797516 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		11BC9FF3283BA80300797516 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 11BC9FF2283BA80300797516 /* OneSignal */; };
 		A1079823282C4260008C0D54 /* AllAlertsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1079822282C4260008C0D54 /* AllAlertsViewModel.swift */; };
 		A1079826282D6D04008C0D54 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1079825282D6D04008C0D54 /* AlertModel.swift */; };
 		A107982B282D7A11008C0D54 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A107982A282D7A11008C0D54 /* SignInView.swift */; };
@@ -142,17 +142,24 @@
 			files = (
 				A1890B4228148ECC00047451 /* FirebaseCrashlytics in Frameworks */,
 				A1890B3E28148ECC00047451 /* FirebaseAnalytics in Frameworks */,
-				11BB0D5628438CEB00E4FCC5 /* Kingfisher in Frameworks */,
+				11ADF5562872C8EE00DF22E6 /* Kingfisher in Frameworks */,
 				A1890B4428148ECC00047451 /* FirebaseDatabase in Frameworks */,
 				A1890B4628148ECC00047451 /* FirebaseFirestore in Frameworks */,
 				A1890B4028148ECC00047451 /* FirebaseAuth in Frameworks */,
-				11BC9FF3283BA80300797516 /* OneSignal in Frameworks */,
+				11ADF5532872C7C400DF22E6 /* OneSignal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11ADF54B2872C21100DF22E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		11B8AF152845DA3B005AFB41 /* Others */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +410,7 @@
 				A1E1CCF527BC0D9400049715 /* RIL */,
 				11BC9FE6283BA5C300797516 /* OneSignalNotificationServiceExtension */,
 				A1E1CCF427BC0D9400049715 /* Products */,
+				11ADF54B2872C21100DF22E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -548,8 +556,8 @@
 				A1890B4128148ECC00047451 /* FirebaseCrashlytics */,
 				A1890B4328148ECC00047451 /* FirebaseDatabase */,
 				A1890B4528148ECC00047451 /* FirebaseFirestore */,
-				11BC9FF2283BA80300797516 /* OneSignal */,
-				11BB0D5528438CEB00E4FCC5 /* Kingfisher */,
+				11ADF5522872C7C400DF22E6 /* OneSignal */,
+				11ADF5552872C8EE00DF22E6 /* Kingfisher */,
 			);
 			productName = RIL;
 			productReference = A1E1CCF327BC0D9400049715 /* RIL.app */;
@@ -584,8 +592,8 @@
 			mainGroup = A1E1CCEA27BC0D9400049715;
 			packageReferences = (
 				A1890B3C28148ECC00047451 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				11BC9FF1283BA80300797516 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
-				11BB0D5428438CEB00E4FCC5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				11ADF5512872C7C300DF22E6 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+				11ADF5542872C8EE00DF22E6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = A1E1CCF427BC0D9400049715 /* Products */;
 			projectDirPath = "";
@@ -862,9 +870,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RIL/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This Application requires location access for sending emergency location help";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -876,7 +884,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -894,9 +902,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RIL/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This Application requires location access for sending emergency location help";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -908,7 +916,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -945,21 +953,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		11BB0D5428438CEB00E4FCC5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
-		11BC9FF1283BA80300797516 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+		11ADF5512872C7C300DF22E6 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
 			requirement = {
 				kind = versionRange;
 				maximumVersion = 4.0.0;
 				minimumVersion = 3.0.0;
+			};
+		};
+		11ADF5542872C8EE00DF22E6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
 			};
 		};
 		A1890B3C28148ECC00047451 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
@@ -973,15 +981,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		11BB0D5528438CEB00E4FCC5 /* Kingfisher */ = {
+		11ADF5522872C7C400DF22E6 /* OneSignal */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 11BB0D5428438CEB00E4FCC5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		11BC9FF2283BA80300797516 /* OneSignal */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 11BC9FF1283BA80300797516 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			package = 11ADF5512872C7C300DF22E6 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
 			productName = OneSignal;
+		};
+		11ADF5552872C8EE00DF22E6 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11ADF5542872C8EE00DF22E6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		A1890B3D28148ECC00047451 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

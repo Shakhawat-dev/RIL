@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 class AskHelpViewModel: ObservableObject {
     @Published var emergencyType: EmergencyType?
+    @Published var emergencyTypeText: String = ""
     
     @Published var shortNoteText: String = ""
     
@@ -35,7 +36,7 @@ class AskHelpViewModel: ObservableObject {
         databasePath?.removeAllObservers()
       }
 
-      func postAlert() {
+    func postAlert(lat: String, long: String, name: String, number: String) {
         guard let databasePath = databasePath else {
           return
         }
@@ -48,7 +49,7 @@ class AskHelpViewModel: ObservableObject {
           return
         }
 
-          let alert = AlertModel(id: key, lat: "", lon: "", name: "", number: "", sosCat: shortNoteText, sosImage: "", sosMsg: "", time: "  ", uid: "", userImage: "")
+          let alert = AlertModel(id: key, lat: "", lon: "", name: "", number: "", sosCat: shortNoteText, sosImage: "", sosMsg: shortNoteText, time: "", uid: "", userImage: "")
 
         do {
           let data = try encoder.encode(alert)

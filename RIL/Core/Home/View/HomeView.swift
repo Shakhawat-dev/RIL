@@ -7,9 +7,12 @@
 
 import SwiftUI
 import MapKit
+import Kingfisher
 
 struct HomeView: View {
     @StateObject var vm = HomeViewModel()
+    @EnvironmentObject private var profileVM: ProfileViewModel
+    
     @State var selectedTab = "Home"
     @State var showMenu: Bool = false
     
@@ -104,15 +107,30 @@ extension HomeView {
             Spacer()
             
             NavigationLink(destination: ProfileView()) {
-                Image(systemName: "person")
-                    .padding()
-                    .background(
-                        Circle()
-                            .fill(Color.red)
-                    )
-                    .clipShape(Circle())
-                    .padding(.trailing)
-                    .foregroundColor(.white)
+                if let pp = profileVM.userProfile?.pp {
+                    KFImage(URL(string: pp))
+                        .resizable()
+                        .padding()
+                        .clipShape(Circle())
+                        .background(
+                            Circle()
+                                .fill(.white)
+                        )
+                        .frame(width: 64, height: 64)
+                        .padding(.trailing)
+                } else {
+                    Image(systemName: "person")
+                        .resizable()
+                        .padding()
+                        
+                        .clipShape(Circle())
+                        .background(
+                            Circle()
+                                .fill(.white)
+                        )
+                        .frame(width: 64, height: 64)
+                        .padding(.trailing)
+                }
                 
             }
             

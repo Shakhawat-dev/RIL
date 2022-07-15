@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import FirebaseAuth
+import FirebaseCore
 
 class AuthViewModel: ObservableObject {
     @Published var email: String = ""

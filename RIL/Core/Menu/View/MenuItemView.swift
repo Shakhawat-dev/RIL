@@ -25,8 +25,11 @@ struct MenuItemView: View {
                         Image(systemName: icon).resizable()
                             .scaledToFit()
                     } else {
-                        Image(icon).resizable()
+                        Image(icon)
+                            .renderingMode(.template)
+                            .resizable()
                             .scaledToFit()
+                            
                     }
                     
                 }

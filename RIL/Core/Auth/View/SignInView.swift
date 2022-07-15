@@ -16,6 +16,8 @@ struct SignInView: View {
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
+                .frame(height: UIScreen.main.bounds.height)
+//            Color.blue
             
             ScrollView() {
                 VStack {
@@ -26,8 +28,10 @@ struct SignInView: View {
                         .scaledToFit()
                         .padding()
                         .foregroundColor(.white)
+                        .padding(.top)
+                        
                     
-                    Spacer(minLength: 0)
+//                    Spacer(minLength: 0)
                     
                     Text("Please Sign-in To Continue...")
                         .font(.title3)
@@ -115,6 +119,7 @@ struct SignInView: View {
                             
                             NavigationLink {
                                 RegistrationView()
+                                    .navigationBarTitleDisplayMode(.inline)
                             } label: {
                                 Text("Register")
                                     .bold()
@@ -171,7 +176,7 @@ struct SignInView: View {
                     }
                     .padding(.horizontal, 32)
                     
-                    Spacer(minLength: 0)
+//                    Spacer(minLength: 0)
                     
                     
                 }

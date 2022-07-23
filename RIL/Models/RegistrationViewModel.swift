@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 import FirebaseAuth
+import UIKit
 
 class RegistrationViewModel: ObservableObject {
     
@@ -20,6 +21,18 @@ class RegistrationViewModel: ObservableObject {
     @Published var emergency1: String = ""
     @Published var emergency2: String = ""
     @Published var emergency3: String = ""
+    
+    @Published var showImageSheet = false
+    @Published var imagePicked = false
+    @Published var photo = UIImage() {
+        didSet {
+            imagePicked = true
+        }
+    }
+    @Published var imageUrl = ""
+    @Published var isChooseOrTakePhoto = false
+    @Published var isPhotoSelected = false
+    @Published var photoOptions: PhotoOptions = .photoLibrary
     
     private var authVM = AuthViewModel()
     

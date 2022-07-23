@@ -151,6 +151,7 @@ struct SignInView: View {
                         HStack {
                             Button {
                                 // Do something
+                                vm.googleLogin()
                             } label: {
                                 HStack {
                                     Image("googlebtn")

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct RegistrationView: View {
     @ObservedObject var vm = RegistrationViewModel()
-    
+    @State var isPhotoSelected = false
+
     var body: some View {
         
         ZStack {
@@ -25,25 +26,66 @@ struct RegistrationView: View {
                         VStack {
                             Button {
                                 // Do Something
+                                vm.isChooseOrTakePhoto.toggle()
                             } label: {
-                                Image(systemName: "person")
-                                    .resizable()
-                                    .frame(width: 64, height: 64)
-                                    .padding()
-                                    .clipShape(Circle())
-                                    .background(
-                                        Circle()
-                                            .fill(.white)
-                                    )
+                                if vm.imagePicked {
+                                    Image(uiImage: vm.photo)
+                                        .resizable()
+                                        .clipShape(Circle())
+                                        .scaledToFill()
+                                        .frame(width: 128, height: 128)
+                                        .background(
+                                            Circle()
+                                                .fill(.white)
+                                        )
+                                        .padding()
+                                        
+                                } else {
+                                    Image(systemName: "person")
+                                        .resizable()
+                                        .frame(width: 64, height: 64)
+                                        .padding()
+                                        .clipShape(Circle())
+                                        .background(
+                                            Circle()
+                                                .fill(.white)
+                                        )
+                                }
+                                
                             }
-
-                            
                                 
                             Text("Click to change")
                                 .font(.caption)
                                 .fontWeight(.thin)
                             
                         }
+                        .actionSheet(isPresented: $vm.isChooseOrTakePhoto) { () -> ActionSheet in
+                            ActionSheet(title: Text("Choose"), message: Text("Choose your option"), buttons: [
+                                .default(Text("Choose a photo"), action: {
+                                    isPhotoSelected = true
+                                    vm.photoOptions = .photoLibrary
+                                    vm.showImageSheet.toggle()
+                                }),
+                                .default(Text("Take a photo") , action: {
+                                    isPhotoSelected = true
+                                    vm.photoOptions = .camera
+                                    vm.showImageSheet.toggle()
+                                    
+                                }),
+                                .cancel({
+                                    vm.showImageSheet = false
+                                    vm.imagePicked = false
+                                })])
+                        }
+                        .sheet(isPresented: $vm.showImageSheet, content: {
+                            
+                            switch vm.photoOptions {
+                            case .photoLibrary:
+                                ImagePicker(sourceType: .photoLibrary, selectedImage: $vm.photo)
+                            case .camera:
+                                ImagePicker(sourceType: .camera, selectedImage: $vm.photo)
+                            }
+                        })
                         
                     }
                     .padding()

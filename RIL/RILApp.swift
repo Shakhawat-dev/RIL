@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import GoogleSignIn
 
 @main
 struct RILApp: App {
@@ -14,6 +15,12 @@ struct RILApp: App {
     init() {
         FirebaseApp.configure()
         Database.database().isPersistenceEnabled = true
+        
+//        GIDSignIn.sharedInstance.handle(url)
+        
+//        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+//        GIDSignIn.sharedInstance().delegate = self
+//        print("Client ID: \(FirebaseApp.app()?.options.clientID)")
     }
     
     var body: some Scene {
